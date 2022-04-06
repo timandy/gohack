@@ -19,31 +19,6 @@ func init() {
 	offsetLabels = offset(gt, "labels")
 }
 
-//add pointer addition operation.
-func add(p unsafe.Pointer, x uintptr) unsafe.Pointer {
-	return unsafe.Pointer(uintptr(p) + x)
-}
-
-func offset(t reflect.Type, f string) uintptr {
-	field, found := t.FieldByName(f)
-	if found {
-		return field.Offset
-	}
-	panic(fmt.Sprintf("No such field '%v' of struct '%v.%v'.", f, t.PkgPath(), t.Name()))
-}
-
-func getg() g {
-	gp := getgp()
-	if gp == nil {
-		panic("Failed to get gp from runtime natively.")
-	}
-	return g{
-		goid:         *(*int64)(add(gp, offsetGoid)),
-		paniconfault: (*bool)(add(gp, offsetPaniconfault)),
-		labels:       (*unsafe.Pointer)(add(gp, offsetLabels)),
-	}
-}
-
 type g struct {
 	goid         int64
 	paniconfault *bool
@@ -66,4 +41,31 @@ func (gp g) getLabels() unsafe.Pointer {
 
 func (gp g) setLabels(labels unsafe.Pointer) {
 	*gp.labels = labels
+}
+
+// getg returns current coroutine struct.
+func getg() g {
+	gp := getgp()
+	if gp == nil {
+		panic("Failed to get gp from runtime natively.")
+	}
+	return g{
+		goid:         *(*int64)(add(gp, offsetGoid)),
+		paniconfault: (*bool)(add(gp, offsetPaniconfault)),
+		labels:       (*unsafe.Pointer)(add(gp, offsetLabels)),
+	}
+}
+
+// offset returns the offset of the specified field.
+func offset(t reflect.Type, f string) uintptr {
+	field, found := t.FieldByName(f)
+	if found {
+		return field.Offset
+	}
+	panic(fmt.Sprintf("No such field '%v' of struct '%v.%v'.", f, t.PkgPath(), t.Name()))
+}
+
+// add pointer addition operation.
+func add(p unsafe.Pointer, x uintptr) unsafe.Pointer {
+	return unsafe.Pointer(uintptr(p) + x)
 }
