@@ -13,7 +13,7 @@
 
 When the fields of other variables of this type are to be read, only the address is obtained through another simplified assembly, which has low overhead, and offsets the address and then reads and writes the content.
 
-This library demonstrates how to get the value of `runtime.g 0` by assembly, and get the offset to the key field by reflection.
+This library demonstrates how to get the value of `runtime.g0` by assembly, and get the offset to the key field by reflection.
 
 Then read the address of the current coroutine structure `runtime.g`, offset the pointer address, and then read and write the fields.
 
@@ -25,9 +25,9 @@ It should be noted that this method has minimal overhead, is compatible with fut
 
 The goal of `gohack` is to provide an idea and source code implementation.
 
-If you want to use the source code, please [Fork](https://github.com/timandy/gohack/fork) and [Star](https://github.com/timandy/gohack).
+If you feel this repository is helpful to you, please [Fork](https://github.com/timandy/gohack/fork) and [Star](https://github.com/timandy/gohack).
 
-[routine](https://github.com/timandy/gohack/fork) is a `tls` library, powered by `gohack`.
+[routine](https://github.com/timandy/routine) is a `tls` library, powered by `gohack`.
 
 # *License*
 

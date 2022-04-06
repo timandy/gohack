@@ -25,9 +25,9 @@
 
 `gohack`的目标是提供一种思路和源码实现。
 
-如果你要使用源码请 [Fork](https://github.com/timandy/gohack/fork) 和 [Star](https://github.com/timandy/gohack) 。
+如果你觉得该仓库对你有所帮助，请 [Fork](https://github.com/timandy/gohack/fork) 和 [Star](https://github.com/timandy/gohack) 。
 
-[routine](https://github.com/timandy/gohack/fork) 是一个 `tls` 库，由 `gohack` 提供技术支持。
+[routine](https://github.com/timandy/routine) 是一个 `tls` 库，由 `gohack` 提供技术支持。
 
 # *许可证*
 
