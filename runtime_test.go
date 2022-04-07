@@ -7,7 +7,6 @@ import (
 	"runtime"
 	"sync"
 	"testing"
-	"time"
 )
 
 func TestGetgp(t *testing.T) {
@@ -79,7 +78,6 @@ func runTest(t *testing.T, fun func()) {
 	wg.Add(100)
 	for i := 0; i < 100; i++ {
 		go func() {
-			time.Sleep(10 * time.Millisecond) //make sure runtime.g is not reused
 			fun()
 			wg.Done()
 		}()

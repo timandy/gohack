@@ -25,20 +25,24 @@ type g struct {
 	labels       *unsafe.Pointer
 }
 
+//go:norace
 func (gp g) getPanicOnFault() bool {
 	return *gp.paniconfault
 }
 
+//go:norace
 func (gp g) setPanicOnFault(new bool) (old bool) {
 	old = *gp.paniconfault
 	*gp.paniconfault = new
 	return old
 }
 
+//go:norace
 func (gp g) getLabels() unsafe.Pointer {
 	return *gp.labels
 }
 
+//go:norace
 func (gp g) setLabels(labels unsafe.Pointer) {
 	*gp.labels = labels
 }
