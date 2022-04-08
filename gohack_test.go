@@ -54,6 +54,8 @@ func TestPaniconfault(t *testing.T) {
 		//write-read-2
 		gp.setPanicOnFault(true)
 		assert.True(t, gp.getPanicOnFault())
+		//restore
+		gp.setPanicOnFault(false)
 	})
 }
 
@@ -83,17 +85,21 @@ func TestProfLabel(t *testing.T) {
 		//write-read-2
 		gp.setLabels(ptr)
 		assert.Equal(t, ptr, gp.getLabels())
+		//restore
+		gp.setLabels(null)
 	})
 }
 
 func TestOffset(t *testing.T) {
-	assert.Panics(t, func() {
-		gt := reflect.TypeOf(0)
-		offset(gt, "hello")
-	})
-	assert.PanicsWithValue(t, "No such field 'hello' of struct 'runtime.g'.", func() {
-		gt := getgt()
-		offset(gt, "hello")
+	runTest(t, func() {
+		assert.Panics(t, func() {
+			gt := reflect.TypeOf(0)
+			offset(gt, "hello")
+		})
+		assert.PanicsWithValue(t, "No such field 'hello' of struct 'runtime.g'.", func() {
+			gt := getgt()
+			offset(gt, "hello")
+		})
 	})
 }
 

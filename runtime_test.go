@@ -6,6 +6,7 @@ import (
 	"reflect"
 	"runtime"
 	"sync"
+	"sync/atomic"
 	"testing"
 )
 
@@ -74,13 +75,18 @@ func TestGetgt(t *testing.T) {
 }
 
 func runTest(t *testing.T, fun func()) {
-	wg := sync.WaitGroup{}
+	var count int32
+	wg := &sync.WaitGroup{}
 	wg.Add(100)
 	for i := 0; i < 100; i++ {
 		go func() {
-			fun()
+			for j := 0; j < 100; j++ {
+				fun()
+			}
+			atomic.AddInt32(&count, 1)
 			wg.Done()
 		}()
 	}
 	wg.Wait()
+	assert.Equal(t, 100, int(count))
 }
