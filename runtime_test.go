@@ -11,15 +11,15 @@ import (
 )
 
 func TestGetgp(t *testing.T) {
-	gp1 := getgp()
+	gp0 := getgp()
 	runtime.GC()
-	assert.NotNil(t, gp1, "Fail to get gp.")
-
+	assert.NotNil(t, gp0)
+	//
 	runTest(t, func() {
-		gp2 := getgp()
+		gp := getgp()
 		runtime.GC()
-		assert.NotNil(t, gp2, "Fail to get gp.")
-		assert.NotEqual(t, gp1, gp2, "Every living g must be different. [gp1:%p] [gp2:%p]", gp1, gp2)
+		assert.NotNil(t, gp)
+		assert.NotEqual(t, gp0, gp)
 	})
 }
 
