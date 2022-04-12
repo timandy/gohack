@@ -54,13 +54,13 @@ jobs:
         if: ${{ matrix.arch == '386' }}
         env:
           GOARCH: 386
-        run: go test -v -coverprofile='coverage.txt' -covermode=atomic
+        run: go test -v -coverprofile='coverage.txt' -covermode=atomic ./...
 
       - name: 'Test with amd64'
         if: ${{ matrix.arch == 'amd64' }}
         env:
           GOARCH: amd64
-        run: go test -v -race -coverprofile='coverage.txt' -covermode=atomic
+        run: go test -v -race -coverprofile='coverage.txt' -covermode=atomic ./...
 
       - name: 'Build with armv6'
         if: ${{ matrix.arch == 'armv6' }}
