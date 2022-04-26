@@ -1,7 +1,8 @@
 # gohack
 
 [![Build Status](https://github.com/timandy/gohack/actions/workflows/build.yml/badge.svg)](https://github.com/timandy/gohack/actions)
-[![Codecov](https://codecov.io/gh/timandy/gohack/branch/main/graph/badge.svg)](https://codecov.io/gh/timandy/gohack)
+[![Codecov](https://codecov.io/gh/timandy/gohack/branch/main/graph/badge.svg)](https://app.codecov.io/gh/timandy/gohack)
+[![License](https://img.shields.io/github/license/timandy/gohack.svg)](https://github.com/timandy/gohack/blob/main/LICENSE)
 
 > [中文版](README_zh.md)
 
