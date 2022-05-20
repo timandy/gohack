@@ -8,7 +8,7 @@ import (
 	"unsafe"
 )
 
-func TestGoid(t *testing.T) {
+func TestG_Goid(t *testing.T) {
 	runTest(t, func() {
 		gp := getg()
 		runtime.GC()
@@ -16,7 +16,7 @@ func TestGoid(t *testing.T) {
 	})
 }
 
-func TestPaniconfault(t *testing.T) {
+func TestG_Paniconfault(t *testing.T) {
 	runTest(t, func() {
 		gp := getg()
 		runtime.GC()
@@ -43,7 +43,7 @@ func TestPaniconfault(t *testing.T) {
 	})
 }
 
-func TestGopc(t *testing.T) {
+func TestG_Gopc(t *testing.T) {
 	runTest(t, func() {
 		gp := getg()
 		runtime.GC()
@@ -51,7 +51,7 @@ func TestGopc(t *testing.T) {
 	})
 }
 
-func TestProfLabel(t *testing.T) {
+func TestG_ProfLabel(t *testing.T) {
 	runTest(t, func() {
 		ptr := unsafe.Pointer(&struct{}{})
 		null := unsafe.Pointer(nil)
