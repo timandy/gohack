@@ -1,9 +1,10 @@
 package gohack
 
 import (
-	_ "github.com/timandy/gohack/g"
 	"reflect"
 	"unsafe"
+
+	_ "github.com/timandy/gohack/g"
 )
 
 // getgp returns the pointer to the current runtime.g.
