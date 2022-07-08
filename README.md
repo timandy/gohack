@@ -30,6 +30,21 @@ If you feel this repository is helpful to you, please [Fork](https://github.com/
 
 [routine](https://github.com/timandy/routine) is a `tls` library, powered by `gohack`.
 
+# Support Grid
+
+|             | **`darwin`** | **`linux`** | **`windows`** | **`freebsd`** |             |
+|------------:|:------------:|:-----------:|:-------------:|:-------------:|:------------|
+|   **`386`** |              |      ✅      |       ✅       |       ✅       | **`386`**   |
+| **`amd64`** |      ✅       |      ✅      |       ✅       |       ✅       | **`amd64`** |
+| **`armv6`** |              |      ✅      |               |               | **`armv6`** |
+| **`armv7`** |              |      ✅      |               |               | **`armv7`** |
+| **`arm64`** |      ✅       |      ✅      |               |               | **`arm64`** |
+| **`ppc64`** |              |      ✅      |               |               | **`ppc64`** |
+| **`s390x`** |              |      ✅      |               |               | **`s390x`** |
+|             | **`darwin`** | **`linux`** | **`windows`** | **`freebsd`** |             |
+
+✅: Supported
+
 # *License*
 
 `gohack` is released under the [Apache License 2.0](LICENSE).
