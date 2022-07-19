@@ -18,7 +18,7 @@ This library demonstrates how to get the value of `runtime.g0` by assembly, and 
 
 Then read the address of the current coroutine structure `runtime.g`, offset the pointer address, and then read and write the fields.
 
-It should be noted that this method has minimal overhead, is compatible with future `go` versions, and supports cross-platform (`386`, `amd64`, `armv6`, `armv7`, `arm64`).
+It should be noted that this method has minimal overhead, is compatible with future `go` versions, and supports cross-platform (`386`, `amd64`, `armv6`, `armv7`, `arm64`, `ppc64`, `s390x`).
 
 ## Usage
 
@@ -29,6 +29,21 @@ The goal of `gohack` is to provide an idea and source code implementation.
 If you feel this repository is helpful to you, please [Fork](https://github.com/timandy/gohack/fork) and [Star](https://github.com/timandy/gohack).
 
 [routine](https://github.com/timandy/routine) is a `tls` library, powered by `gohack`.
+
+# Support Grid
+
+|             | **`darwin`** | **`linux`** | **`windows`** | **`freebsd`** |             |
+|------------:|:------------:|:-----------:|:-------------:|:-------------:|:------------|
+|   **`386`** |              |      ✅      |       ✅       |       ✅       | **`386`**   |
+| **`amd64`** |      ✅       |      ✅      |       ✅       |       ✅       | **`amd64`** |
+| **`armv6`** |              |      ✅      |               |               | **`armv6`** |
+| **`armv7`** |              |      ✅      |               |               | **`armv7`** |
+| **`arm64`** |      ✅       |      ✅      |               |               | **`arm64`** |
+| **`ppc64`** |              |      ✅      |               |               | **`ppc64`** |
+| **`s390x`** |              |      ✅      |               |               | **`s390x`** |
+|             | **`darwin`** | **`linux`** | **`windows`** | **`freebsd`** |             |
+
+✅: Supported
 
 # *License*
 
