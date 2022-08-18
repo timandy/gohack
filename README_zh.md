@@ -2,6 +2,7 @@
 
 [![Build Status](https://github.com/timandy/gohack/actions/workflows/build.yml/badge.svg)](https://github.com/timandy/gohack/actions)
 [![Codecov](https://codecov.io/gh/timandy/gohack/branch/main/graph/badge.svg)](https://app.codecov.io/gh/timandy/gohack)
+[![Go Report Card](https://goreportcard.com/badge/github.com/timandy/gohack)](https://goreportcard.com/report/github.com/timandy/gohack)
 [![License](https://img.shields.io/github/license/timandy/gohack.svg)](https://github.com/timandy/gohack/blob/main/LICENSE)
 
 > [English Version](README.md)
