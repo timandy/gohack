@@ -2,6 +2,7 @@
 
 [![Build Status](https://github.com/timandy/gohack/actions/workflows/build.yml/badge.svg)](https://github.com/timandy/gohack/actions)
 [![Codecov](https://codecov.io/gh/timandy/gohack/branch/main/graph/badge.svg)](https://app.codecov.io/gh/timandy/gohack)
+[![Go Report Card](https://goreportcard.com/badge/github.com/timandy/gohack)](https://goreportcard.com/report/github.com/timandy/gohack)
 [![License](https://img.shields.io/github/license/timandy/gohack.svg)](https://github.com/timandy/gohack/blob/main/LICENSE)
 
 > [中文版](README_zh.md)
@@ -18,7 +19,7 @@ This library demonstrates how to get the value of `runtime.g0` by assembly, and 
 
 Then read the address of the current coroutine structure `runtime.g`, offset the pointer address, and then read and write the fields.
 
-It should be noted that this method has minimal overhead, is compatible with future `go` versions, and supports cross-platform (`386`, `amd64`, `armv6`, `armv7`, `arm64`, `ppc64`, `s390x`).
+It should be noted that this method has minimal overhead, is compatible with future `go` versions, and supports cross-platform (`386`, `amd64`, `armv6`, `armv7`, `arm64`, `loong64`, `mips`, `mipsle`, `mips64`, `mips64le`, `ppc64`, `ppc64le`, `riscv64`, `s390x`, `wasm`).
 
 ## Usage
 
@@ -32,16 +33,24 @@ If you feel this repository is helpful to you, please [Fork](https://github.com/
 
 # Support Grid
 
-|             | **`darwin`** | **`linux`** | **`windows`** | **`freebsd`** |             |
-|------------:|:------------:|:-----------:|:-------------:|:-------------:|:------------|
-|   **`386`** |              |      ✅      |       ✅       |       ✅       | **`386`**   |
-| **`amd64`** |      ✅       |      ✅      |       ✅       |       ✅       | **`amd64`** |
-| **`armv6`** |              |      ✅      |               |               | **`armv6`** |
-| **`armv7`** |              |      ✅      |               |               | **`armv7`** |
-| **`arm64`** |      ✅       |      ✅      |               |               | **`arm64`** |
-| **`ppc64`** |              |      ✅      |               |               | **`ppc64`** |
-| **`s390x`** |              |      ✅      |               |               | **`s390x`** |
-|             | **`darwin`** | **`linux`** | **`windows`** | **`freebsd`** |             |
+|                | **`darwin`** | **`linux`** | **`windows`** | **`freebsd`** | **`js`** |                |
+|---------------:|:------------:|:-----------:|:-------------:|:-------------:|:--------:|:---------------|
+|      **`386`** |              |      ✅      |       ✅       |       ✅       |          | **`386`**      |
+|    **`amd64`** |      ✅       |      ✅      |       ✅       |       ✅       |          | **`amd64`**    |
+|    **`armv6`** |              |      ✅      |               |               |          | **`armv6`**    |
+|    **`armv7`** |              |      ✅      |               |               |          | **`armv7`**    |
+|    **`arm64`** |      ✅       |      ✅      |               |               |          | **`arm64`**    |
+|  **`loong64`** |              |      ✅      |               |               |          | **`loong64`**  |
+|     **`mips`** |              |      ✅      |               |               |          | **`mips`**     |
+|   **`mipsle`** |              |      ✅      |               |               |          | **`mipsle`**   |
+|   **`mips64`** |              |      ✅      |               |               |          | **`mips64`**   |
+| **`mips64le`** |              |      ✅      |               |               |          | **`mips64le`** |
+|    **`ppc64`** |              |      ✅      |               |               |          | **`ppc64`**    |
+|  **`ppc64le`** |              |      ✅      |               |               |          | **`ppc64le`**  |
+|  **`riscv64`** |              |      ✅      |               |               |          | **`riscv64`**  |
+|    **`s390x`** |              |      ✅      |               |               |          | **`s390x`**    |
+|     **`wasm`** |              |             |               |               |    ✅     | **`wasm`**     |
+|                | **`darwin`** | **`linux`** | **`windows`** | **`freebsd`** | **`js`** |                |
 
 ✅: Supported
 

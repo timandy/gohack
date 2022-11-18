@@ -2,6 +2,7 @@
 
 [![Build Status](https://github.com/timandy/gohack/actions/workflows/build.yml/badge.svg)](https://github.com/timandy/gohack/actions)
 [![Codecov](https://codecov.io/gh/timandy/gohack/branch/main/graph/badge.svg)](https://app.codecov.io/gh/timandy/gohack)
+[![Go Report Card](https://goreportcard.com/badge/github.com/timandy/gohack)](https://goreportcard.com/report/github.com/timandy/gohack)
 [![License](https://img.shields.io/github/license/timandy/gohack.svg)](https://github.com/timandy/gohack/blob/main/LICENSE)
 
 > [English Version](README.md)
@@ -18,7 +19,7 @@
 
 然后读取当前协程结构体`runtime.g`的地址，偏移指针地址，然后读写字段。
 
-需要注意的是该方式开销极小，并且兼容未来的`go`版本，并且支持跨平台（`386`、`amd64`、`armv6`、`armv7`、`arm64`、`ppc64`、`s390x`）。
+需要注意的是该方式开销极小，并且兼容未来的`go`版本，并且支持跨平台（`386`、`amd64`、`armv6`、`armv7`、`arm64`、`loong64`、`mips`、`mipsle`、`mips64`、`mips64le`、`ppc64`、`ppc64le`、`riscv64`、`s390x`、`wasm`）。
 
 ## 使用
 
@@ -32,16 +33,24 @@
 
 # 支持网格
 
-|             | **`darwin`** | **`linux`** | **`windows`** | **`freebsd`** |             |
-|------------:|:------------:|:-----------:|:-------------:|:-------------:|:------------|
-|   **`386`** |              |      ✅      |       ✅       |       ✅       | **`386`**   |
-| **`amd64`** |      ✅       |      ✅      |       ✅       |       ✅       | **`amd64`** |
-| **`armv6`** |              |      ✅      |               |               | **`armv6`** |
-| **`armv7`** |              |      ✅      |               |               | **`armv7`** |
-| **`arm64`** |      ✅       |      ✅      |               |               | **`arm64`** |
-| **`ppc64`** |              |      ✅      |               |               | **`ppc64`** |
-| **`s390x`** |              |      ✅      |               |               | **`s390x`** |
-|             | **`darwin`** | **`linux`** | **`windows`** | **`freebsd`** |             |
+|                | **`darwin`** | **`linux`** | **`windows`** | **`freebsd`** | **`js`** |                |
+|---------------:|:------------:|:-----------:|:-------------:|:-------------:|:--------:|:---------------|
+|      **`386`** |              |      ✅      |       ✅       |       ✅       |          | **`386`**      |
+|    **`amd64`** |      ✅       |      ✅      |       ✅       |       ✅       |          | **`amd64`**    |
+|    **`armv6`** |              |      ✅      |               |               |          | **`armv6`**    |
+|    **`armv7`** |              |      ✅      |               |               |          | **`armv7`**    |
+|    **`arm64`** |      ✅       |      ✅      |               |               |          | **`arm64`**    |
+|  **`loong64`** |              |      ✅      |               |               |          | **`loong64`**  |
+|     **`mips`** |              |      ✅      |               |               |          | **`mips`**     |
+|   **`mipsle`** |              |      ✅      |               |               |          | **`mipsle`**   |
+|   **`mips64`** |              |      ✅      |               |               |          | **`mips64`**   |
+| **`mips64le`** |              |      ✅      |               |               |          | **`mips64le`** |
+|    **`ppc64`** |              |      ✅      |               |               |          | **`ppc64`**    |
+|  **`ppc64le`** |              |      ✅      |               |               |          | **`ppc64le`**  |
+|  **`riscv64`** |              |      ✅      |               |               |          | **`riscv64`**  |
+|    **`s390x`** |              |      ✅      |               |               |          | **`s390x`**    |
+|     **`wasm`** |              |             |               |               |    ✅     | **`wasm`**     |
+|                | **`darwin`** | **`linux`** | **`windows`** | **`freebsd`** | **`js`** |                |
 
 ✅：支持
 
