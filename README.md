@@ -11,11 +11,11 @@
 
 # Introduce
 
-`gohack` obtains the variable value in the `runtime` package through assembly, through which the field offset of the structure can be obtained by reflection.
+`gohack` gets the unexported structure type by looking up the runtime symbol table `typelinks`, which can get the field offset of the struct.
 
 When the fields of other variables of this type are to be read, only the address is obtained through another simplified assembly, which has low overhead, and offsets the address and then reads and writes the content.
 
-This library demonstrates how to get the value of `runtime.g0` by assembly, and get the offset to the key field by reflection.
+This library demonstrates how to get the type `runtime.g` and get the offset of the key field.
 
 Then read the address of the current coroutine structure `runtime.g`, offset the pointer address, and then read and write the fields.
 
