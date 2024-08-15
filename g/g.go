@@ -21,7 +21,7 @@ func getgp() unsafe.Pointer
 // getg0 returns the value of runtime.g0.
 //
 //go:nosplit
-func getg0() interface{} {
+func getg0() any {
 	return packEface(getgt(), unsafe.Pointer(&g0))
 }
 

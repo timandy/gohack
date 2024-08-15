@@ -31,7 +31,7 @@ func typelinks() (sections []unsafe.Pointer, offset [][]int32)
 func resolveTypeOff(rtype unsafe.Pointer, off int32) unsafe.Pointer
 
 // packEface returns an empty interface representing a value of the specified type, using p as the pointer to the data.
-func packEface(typ reflect.Type, p unsafe.Pointer) (i interface{}) {
+func packEface(typ reflect.Type, p unsafe.Pointer) (i any) {
 	t := (*iface)(unsafe.Pointer(&typ))
 	e := (*eface)(unsafe.Pointer(&i))
 	e._type = t.data

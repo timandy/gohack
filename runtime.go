@@ -15,7 +15,7 @@ func getgp() unsafe.Pointer
 // getg0 returns the value of runtime.g0.
 //
 //go:linkname getg0 github.com/timandy/gohack/g.getg0
-func getg0() interface{}
+func getg0() any
 
 // getgt returns the type of runtime.g.
 //
