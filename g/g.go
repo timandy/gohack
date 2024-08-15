@@ -8,22 +8,10 @@ import (
 	"unsafe"
 )
 
-// g0 the value of runtime.g0.
-//
-//go:linkname g0 runtime.g0
-var g0 struct{}
-
 // getgp returns the pointer to the current runtime.g.
 //
 //go:nosplit
 func getgp() unsafe.Pointer
-
-// getg0 returns the value of runtime.g0.
-//
-//go:nosplit
-func getg0() any {
-	return packEface(getgt(), unsafe.Pointer(&g0))
-}
 
 // getgt returns the type of runtime.g.
 //
