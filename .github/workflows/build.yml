@@ -88,25 +88,7 @@ jobs:
           # linux excludes
           - os: linux
             arch: loong64
-            go: 1.13
-          - os: linux
-            arch: loong64
-            go: 1.14
-          - os: linux
-            arch: loong64
-            go: 1.15
-          - os: linux
-            arch: loong64
-            go: 1.16
-          - os: linux
-            arch: loong64
-            go: 1.17
-          - os: linux
-            arch: loong64
             go: 1.18
-          - os: linux
-            arch: riscv64
-            go: 1.13
           - os: linux
             arch: wasm
           # windows excludes
