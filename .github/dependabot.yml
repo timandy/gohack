@@ -6,8 +6,6 @@ updates:
   # Maintain dependencies for gomod
   - package-ecosystem: "gomod"
     directory: "/"
-    ignore:
-      - dependency-name: "github.com/stretchr/testify"
     schedule:
       interval: "daily"
       time: "08:00"
